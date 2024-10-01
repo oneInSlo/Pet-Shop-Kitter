@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+
+    <html lang="en">
+
+        <head>
+
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta name="title" content="Kitter - High Quality Pet Food">
+            <meta name="description" content="Welcome To Kitter!">
+
+            <title>ABOUT US - Kitter: High Quality Pet Food</title>
+
+            <link rel="icon" href="./assets/images/service-about-image.png">
+            <link rel="stylesheet" href="./assets/css/style.css">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Carter+One&family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+            
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+        </head>
+
+<body>
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+
+    <div class="container-fluid" data-nav-toggler>
+    
+        <ul class="nav flex-column flex-sm-row">
+            <li class="nav-item flex-grow-1 d-flex align-items-center">
+                <a href="#" class="nav-link logo">Kitter</a>
+            </li>
+            <li class="nav-item d-flex align-items-center">
+                <a href="index.html" class="nav-link text-danger fs-3" data-nav-link>Home</a>
+              </li>
+
+              <li class="nav-item d-flex align-items-center">
+                <a href="#" class="nav-link text-danger fs-3" data-nav-link>About Us</a>
+              </li>
+
+              <li class="nav-item d-flex align-items-center">
+                <a href="shop.html" class="nav-link text-danger fs-3" data-nav-link>Shop</a>
+              </li>
+
+              <li class="nav-item d-flex align-items-center">
+                <a href="kosarica.html" class="nav-link text-danger fs-3" data-nav-link>Cart</a>
+              </li>
+
+              <li class="nav-item d-flex align-items-center">
+                <a href="register.html" class="nav-link text-danger fs-3" data-nav-link>Register</a>
+              </li>
+
+              <li class="nav-item d-flex align-items-center me-4">
+                <a href="settings.html" class="nav-link text-danger fs-3" data-nav-link>Settings</a>
+              </li>
+
+              <li class="nav-item d-flex align-items-center">
+                <span id="formattedDate" class="nav-link bg-danger-subtle rounded text-danger px-4 me-3 fs-3"></span>
+              </li>
+
+              <li class="nav-item d-flex align-items-center">
+                <button class="action-btn user" aria-label="User">
+                    <span class="nav-link text-danger" data-toggle="modal" data-target="#loginModal">
+                      <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
+                    </span>
+                </button>
+              </li>
+
+              <li class="nav-item d-flex align-items-center me-4">
+                <button class="action-btn shopping" aria-label="cart" onclick="toggleCart()" class="nav-link text-danger">
+                    <ion-icon name="bag-handle-outline" aria-hidden="true" class="text-danger"></ion-icon>
+                    <span class="btn-badge quantity">0</span>
+                  </button>
+              </li>
+
+        </ul>
+
+      </div>
+
+  </header>
+
+
+  <div class="cart-disp cardCss fs-4" id="cart">
+    <h1 class="display-2 ms-4 my-3 text-white">Your Cart</h1>
+    <div class="checkOut">
+    <a href="kosarica.html" class="text-decoration-none text-black"><div class="total">0.00</div></a>
+    <div id="closeShopping">Close</div>
+    </div>
+    <ul class="list fs-4">
+    </ul>
+</div>
+
+<div id="backdrop"></div>
+
+  <main>
+
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="section hero has-bg-image" id="home-about" aria-label="home"
+        style="background-image: url('./assets/images/about-us-banner.png')">
+        <div class="hero-section">
+
+          <h1 class="hero-title text-white">
+            <span class="span">Pet Shop Kitter</span> 
+            <span class="span-lower">About Us</span>
+          </h1>
+
+          <p class="hero-text">Fulfilling Every Pet's Wishlist!</p>
+
+          <a href="shop.html" class="btn btn-danger px-5 text-white fs-2">Shop Now!</a>
+
+        </div>
+      </section>
+
+
+      <h2 class="h2 section-title countdown aboutSectionCount">
+        <span class="span" id="countdown"></span>
+      </h2>
+
+      <div class="modal fade" id="loginModal">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+          
+            <div class="modal-header bg-danger">
+              <h2 class="modal-title fs-1 text-white">Login</h2>
+            </div>
+            
+            <div class="modal-body fs-3">
+              <form id="loginForm">
+                <div class="form-group">
+                  <label for="username">Username:</label>
+                  <input type="text" class="form-control fs-4 mt-2" id="username">
+                </div>
+                <div class="form-group">
+                  <label for="password" class="mt-3">Password:</label>
+                  <input type="password" class="form-control fs-4 mt-2" id="password">
+                </div>
+                <p class="mt-3">Don't have an account? <a href="register.html" class="d-inline text-decoration-none text-danger">Register</a>!</p>
+              </form>
+            </div>
+            
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger mt-2 fs-4 w-100" id="loginBtn">Login</button>
+              <button type="button" class="btn btn-secondary fs-4 w-100" data-dismiss="modal">Close</button>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      
+
+
+
+      <!-- 
+        - #CATEGORY
+      -->
+
+      <section class="section category" aria-label="category">
+        <div class="container-fluid">
+
+          <h1 class="text-black text-center mb-4">
+            Welcome To <span class="d-inline text-danger">Kitter</span>!
+          </h1>
+
+          <p class="text-center fs-3">
+            At Kitter, we believe that pets aren't just animals – they're cherished members of the family. With a deep-rooted passion for animal welfare and a commitment to providing exceptional care, we're dedicated to being your partner in every step of your pet parenting journey. From puppies to parrots, kittens to fish, we're here to provide a haven where every creature can thrive.
+          </p>
+
+        </div>
+
+        <hr class="divider">
+
+        <div class="container-fluid">
+
+          <h1 class="text-black text-center mb-4">
+            Our <span class="d-inline text-danger">Story</span>
+          </h1>
+
+          <p class="text-center fs-3">
+            Kitter was born out of a shared love for animals and a desire to make a positive impact on the lives of pets and their owners. Our founders, a team of dedicated animal enthusiasts with backgrounds in veterinary medicine, pet nutrition, and animal behavior, came together with a vision to create a haven where pets and their humans could thrive together. What started as a small pet store has evolved into a beloved community hub, where pet lovers come together to share their passion and expertise.
+          </p>
+
+        </div>
+      </section>
+     
+      <!-- 
+        - #OFFERS
+      -->
+
+      <section class="section offer" aria-label="offer">
+        <div class="container-fluid">
+
+          <ul class="grid-list list-unstyled">
+
+            <li>
+              <div class="offer-card has-bg-image img-holder"
+                style="background-image: url('./assets/images/about-1-1.jpg'); --width: 540; --height: 374;">
+
+                <p class="card-subtitle text-danger">Tailored Nutrition.</p>
+
+                <h3 class="h3 card-title">
+                  Carefully Chosen <span class="span">Items</span>
+                </h3>
+                <a href="shop.html" class="btn btn-danger fs-3 px-3 text-white">Shop Now</a>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="offer-card has-bg-image img-holder"
+                style="background-image: url('./assets/images/about-2-1.jpg'); --width: 540; --height: 374;">
+
+                <p class="card-subtitle text-danger">For all pets.</p>
+
+                <h3 class="h3 card-title">
+                  Exotic Pets <span class="span">Included</span>
+                </h3>
+
+                <a href="shop.html" class="btn btn-danger fs-3 px-3 text-white">Shop Now</a>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="offer-card has-bg-image img-holder"
+                style="background-image: url('./assets/images/about-3-1.jpg'); --width: 540; --height: 374;">
+
+                <p class="card-subtitle text-danger">Unbeatable prices.</p>
+
+                <h3 class="h3 card-title">
+                  Get Good <span class="span">Deals</span>
+                </h3>
+
+                <a href="shop.html" class="btn btn-danger fs-3 px-3 text-white">Shop Now</a>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+      <!-- 
+        - #CATEGORY
+      -->
+
+      <section class="section category" aria-label="category">
+        <div class="container-fluid">
+
+          <h2 class="text-black text-center mb-4">
+            Our <span class="d-inline text-danger">Philosophy</span>
+          </h2>
+
+          <p class="text-center fs-3">
+            At Kitter, we believe in holistic pet care that nurtures the physical, emotional, and social well-being of every animal. We understand that each pet is unique, with their own personality, preferences, and needs. That's why we take a personalized approach to pet care, offering a curated selection of high-quality products and services tailored to meet the specific needs of your furry, feathered, or scaly friend. From premium pet foods and accessories to expert grooming and healthcare advice, we're here to provide everything you need to give your pet the happy, healthy life they deserve.
+          </p>
+
+        </div>
+
+        <hr class="divider">
+
+        <div class="container-fluid">
+
+          <h2 class="text-black text-center mb-4">
+            Our <span class="d-inline text-danger">Promise</span>
+          </h2>
+
+          <p class="text-center fs-3">
+            When you choose Kitter, you're not just choosing a store – you're choosing a partner who shares your passion for pets and is committed to their well-being. Whether you're a first-time pet parent or a seasoned enthusiast, we're here to provide guidance, support, and inspiration every step of the way. Our knowledgeable staff members are always on hand to answer your questions, offer advice, and help you find the perfect products and services for your pet.
+          </p>
+
+        </div>
+      </section>
+
+      <!-- 
+        - #OFFERS
+      -->
+
+      <section class="section offer" aria-label="offer">
+        <div class="container-fluid">
+
+          <ul class="grid-list list-unstyled">
+
+            <li>
+              <div class="offer-card has-bg-image img-holder"
+                style="background-image: url('./assets/images/about-1.jpg'); --width: 540; --height: 374;">
+
+                <p class="card-subtitle text-danger">For Big. And Small.</p>
+
+                <h3 class="h3 card-title">
+                  Find Items For<span class="span">Every Pet</span>
+                </h3>
+
+                <a href="shop.html" class="btn btn-danger fs-3 px-3 text-white">Shop Now</a>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="offer-card has-bg-image img-holder"
+                style="background-image: url('./assets/images/about-2.jpg'); --width: 540; --height: 374;">
+
+                <p class="card-subtitle text-danger">Healthy Treats. Happy Pets.</p>
+
+                <h3 class="h3 card-title">
+                  Your Pet <span class="span"> Gets The Best</span>
+                </h3>
+
+                <a href="shop.html" class="btn btn-danger fs-3 px-3 text-white">Shop Now</a>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="offer-card has-bg-image img-holder"
+                style="background-image: url('./assets/images/about-3.jpg'); --width: 540; --height: 374;">
+
+                <p class="card-subtitle text-danger">Fresh Flavors. Local Produce.</p>
+
+                <h3 class="h3 card-title">
+                  Worry Less <span class="span">About Diseases</span>
+                </h3>
+
+                <a href="shop.html" class="btn btn-danger fs-3 px-3 text-white">Shop Now</a>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+      <!-- 
+        - #CATEGORY
+      -->
+
+      <section class="section category" aria-label="category">
+        <div class="container-fluid">
+
+          <h2 class="text-black text-center mb-4">
+            Community <span class="d-inline text-danger">Engagement</span>
+          </h2>
+
+          <p class="text-center fs-3">
+            At the heart of Kitter is our commitment to building a strong and supportive pet-loving community. We believe that pets have the power to bring people together, and we're dedicated to fostering connections between pets and their owners. From educational workshops and adoption events to community outreach programs and charitable initiatives, we're proud to be an active and engaged member of the communities we serve.
+          </p>
+
+        </div>
+
+        <hr class="divider">
+
+        <div class="container-fluid">
+
+          <h2 class="text-black text-center mb-4">
+            Get In <span class="d-inline text-danger">Touch</span>
+          </h2>
+
+          <p class="text-center fs-3">
+            We invite you to explore our store and experience the Kitter difference for yourself. Whether you're in need of pet supplies, grooming services, or simply a friendly chat with fellow pet lovers, we're here to welcome you with open arms. Visit us in-store, give us a call, or connect with us online – we can't wait to meet you and your beloved pets!
+          </p>
+
+        </div>
+      </section>
+
+
+       <!-- 
+        - #CATEGORY
+      -->
+
+      <section class="section category" aria-label="category">
+        <div class="container-fluid mt-5">        
+        <div class="row">
+
+          <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-header bg-danger text-white fs-2 text-center">
+                        Company Location Information
+                    </div>
+
+                    <div class="card-body fs-4">
+                        <p><strong>Name:</strong> Pet Shop Kitter </p>
+                        <p><strong>Address:</strong> Koroška cesta 275, Maribor, SI</p>
+                        <p><strong>City:</strong> Maribor</p>
+                        <p><strong>State:</strong> Slovenia</p>
+                        <p><strong>Zip Code:</strong> 2000</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-header bg-primary text-white fs-2 text-center">
+                        Contact Information
+                    </div>
+
+                    <div class="card-body fs-4">
+                        <p><strong>Phone:</strong> (386) 249 - 8641</p>
+                        <p><strong>Office Hours:</strong> (Mon - Fri) 08:00 - 16:00 </p>
+                        <p><strong>Email:</strong> <a href="mailto:info@kitter.si" class="text-decoration-none text-warning d-inline">info@kitter.si</a></p>
+                        <p><strong>Website:</strong> <a href="#" class="text-decoration-none text-warning d-inline">www.kitterpetshop.com</a></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-header bg-success text-white fs-2 text-center">
+                        Received Company Awards
+                    </div>
+
+                    <div class="card-body fs-4">
+                        <p><strong>Best Pet Store in Anytown Award 2021:</strong> Recognized for outstanding commitment to pet care and customer service.</p>
+                        <p><strong>Animal Welfare Champion Award 2022:</strong> Acknowledged for efforts in promoting animal welfare and responsible pet ownership.</p>
+                        <p><strong>Community Engagement Award 2023:</strong> Honored for active participation in local community events and fundraisers supporting animal causes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+      </div>
+    </section>
+
+      <section>
+
+        <div class="container-fluid">
+          <img src="./assets/images/dog.jpg" alt="Shrinking Image" class="img-fluid d-none d-sm-block w-100">
+        </div>
+
+      </section>
+
+
+      <!-- 
+        - #SERVICE
+      -->
+
+      <section class="section service" aria-label="service">
+        <div class="container-fluid">
+
+          <img src="./assets/images/service-about-image.png" width="152" loading="lazy" alt="" class="img">
+
+          <h1 class="text-black text-center mb-4">
+            Thank you for choosing Kitter – <span class="d-inline text-danger">where every pet's happiness is our priority.</span>
+          </h1>
+
+        </div>
+      </section>
+    
+
+    </article>
+  </main> 
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <div class="my-5 mb-0">
+
+    <footer class="text-center text-white footerCss">
+
+      <div class="container">
+
+        <section class="mt-5">
+          <div class="row text-center d-flex justify-content-center pt-5">
+            <div class="col-md-2">
+              <h3 class="text-uppercase font-weight-bold">
+                <a href="about.html" class="text-white text-decoration-none">About us</a>
+              </h3>
+            </div>
+            <div class="col-md-2">
+              <h3 class="text-uppercase font-weight-bold">
+                <a href="shop.html" class="text-white text-decoration-none">Shop</a>
+              </h3>
+            </div>
+            <div class="col-md-2">
+              <h3 class="text-uppercase font-weight-bold">
+                <a href="kosarica.html" class="text-white text-decoration-none">Cart</a>
+              </h3>
+            </div>
+            <div class="col-md-2">
+              <h3 class="text-uppercase font-weight-bold">
+                <a href="register.html" class="text-white text-decoration-none">Register</a>
+              </h3>
+            </div>
+            <div class="col-md-2">
+              <h3 class="text-uppercase font-weight-bold">
+                <a href="settings.html" class="text-white text-decoration-none">Settings</a>
+              </h3>
+            </div>
+          </div>
+        </section>
+  
+        <hr class="my-5" />
+  
+        <section class="mb-5">
+          <div class="row d-flex justify-content-center">
+            <div class="col-lg-8">
+              <p class="fs-4">
+                At Kitter, we believe that pets aren't just animals – they're cherished members of the family. With a deep-rooted passion for animal welfare and a commitment to providing exceptional care, we're dedicated to being your partner in every step of your pet parenting journey. From puppies to parrots, kittens to fish, we're here to provide a haven where every creature can thrive.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <hr class="my-5" />
+
+        <section class="pb-3">
+          <div class="row d-flex justify-content-center">
+            <div class="col-lg-8">
+              <p class="fs-4">
+                Ena Imamović © 2024                    
+              </p>
+            </div>
+          </div>
+        </section>
+
+      </div>
+      
+    </footer>
+
+  </div>   
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <script src="./assets/js/script.js"></script>
+
+  <script>
+    
+  </script>
+  
+
+</body>
+
+</html>
